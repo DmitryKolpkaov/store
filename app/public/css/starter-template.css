@@ -14,3 +14,7 @@ table {
 div.thumbnail img {
     max-height: 200px;
 }
+
+.img-width{
+    width: 50% !important;
+}

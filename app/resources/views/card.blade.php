@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-        <img src="http://laravel-diplom-1.rdavydov.ru/storage/products/iphone_x.jpg"
+        <img src="/images/layout.jpg"
              alt="iPhone X 64GB">
         <div class="caption">
             {{--Название и цена у продуктов--}}
