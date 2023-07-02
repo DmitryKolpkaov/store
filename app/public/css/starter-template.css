@@ -18,3 +18,7 @@ div.thumbnail img {
 .img-width{
     width: 50% !important;
 }
+
+div .form-inline form{
+    display: inline;
+}

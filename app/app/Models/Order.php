@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Mockery\Exception;
 
 class Order extends Model
 {
@@ -26,5 +27,22 @@ class Order extends Model
         }
 
         return $sum;
+    }
+
+    public function saveOrder($name, $phone)
+    {
+        if($this->status == 0){
+            $this->name = $name;
+            $this->phone = $phone;
+            $this->status = 1;
+            $this->save();
+
+            session()->forget('orderId');
+
+            return true;
+        }else{
+            throw new Exception('Order status = 1');
+        }
+
     }
 }
