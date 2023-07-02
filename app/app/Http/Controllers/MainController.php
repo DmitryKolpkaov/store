@@ -36,15 +36,4 @@ class MainController extends Controller
         return view('product', ['product'=>$product]);
     }
 
-    #Возвращает страницу корзина
-    public function basket()
-    {
-        return view('basket');
-    }
-
-    #Возвращает страницу оформление заказа
-    public function basketPlace()
-    {
-        return view('order');
-    }
 }
