@@ -30,17 +30,17 @@ class BasketController extends Controller
     {
         $orderId = session('orderId');
         if (is_null($orderId)) {
-            $order = Order::create()->id;
+            $order = Order::create();
             session(['orderId' => $order->id]);
         } else {
             $order = Order::find($orderId);
         }
 
-        if($order->products->contains($productId)){
+        if ($order->products->contains($productId)) {
             $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
             $pivotRow->count++;
             $pivotRow->update();
-        }else{
+        } else {
             $order->products()->attach($productId);
         }
 
