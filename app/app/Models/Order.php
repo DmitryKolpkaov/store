@@ -14,15 +14,21 @@ class Order extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
+        return $this->belongsToMany( Product::class )->withPivot( 'count' )->withTimestamps();
     }
+
+    public function user()
+    {
+        return $this->belongsTo( User::class );
+    }
+
 
     #Полная стоимость заказа
     public function getFullPrice()
     {
         $sum = 0;
 
-        foreach($this->products as $product){
+        foreach( $this->products as $product ){
             $sum += $product->getPriceForCount();
         }
 
@@ -31,17 +37,17 @@ class Order extends Model
 
     public function saveOrder($name, $phone)
     {
-        if($this->status == 0){
+        if( $this->status == 0 ){
             $this->name = $name;
             $this->phone = $phone;
             $this->status = 1;
             $this->save();
 
-            session()->forget('orderId');
+            session()->forget( 'orderId' );
 
             return true;
-        }else{
-            throw new Exception('Order status = 1');
+        } else{
+            throw new Exception( 'Order status = 1' );
         }
 
     }

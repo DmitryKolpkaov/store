@@ -23,7 +23,6 @@
                 <li><a href="{{route('categories')}}">Категории</a>
                 </li>
                 <li><a href="{{route('basket')}}">В корзину</a></li>
-                {{--                <li><a href="{{route('index')}}">Сбросить проект в начальное состояние</a></li>--}}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -32,7 +31,7 @@
                 @endguest
 
                 @auth
-                    <li><a href="{{ route('home') }}">Панель администратора</a></li>
+                    <li><a href="{{ route('orders') }}">Панель администратора</a></li>
                     <li><a href="{{ route('get-logout') }}">Выйти</a></li>
                 @endauth
             </ul>

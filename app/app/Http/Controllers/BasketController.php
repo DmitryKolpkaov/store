@@ -15,9 +15,13 @@ class BasketController extends Controller
     {
         $orderId = session('orderId');
         if (!is_null($orderId)) {
-            $order = Order::findOrFail($orderId);
+            $order = Order::find($orderId);
+        }
+        if(is_null($orderId)){
+            return view('basket');
         }
         return view('basket', compact('order'));
+
     }
 
     #Возвращает страницу оформление заказа
