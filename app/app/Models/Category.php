@@ -15,6 +15,7 @@ class Category extends Model
         'code',
         'name',
         'description',
+        'image'
 
     ];
 
