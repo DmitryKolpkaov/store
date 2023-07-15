@@ -25,7 +25,10 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 
 
 //Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->middleware('auth')->name('orders');
-Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->middleware('is_admin')->name('orders');
+Route::prefix('admin')->get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->middleware('is_admin')->name('orders');
+Route::prefix('admin')->resource('categories', 'App\Http\Controllers\Admin\CategorryController')->middleware('is_admin');
+Route::get('admin/categories', 'App\Http\Controllers\Admin\CategorryController@index')->name('categories.index');
+
 
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
@@ -53,4 +56,4 @@ Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@produc
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -11,6 +11,13 @@ class Category extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'code',
+        'name',
+        'description',
+
+    ];
+
     #Связь категории с продуктами 1 к многим
     public function products()
     {
