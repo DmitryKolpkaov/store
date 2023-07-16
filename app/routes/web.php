@@ -26,8 +26,19 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 
 //Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->middleware('auth')->name('orders');
 Route::prefix('admin')->get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->middleware('is_admin')->name('orders');
+
+//Категории в админке
 Route::prefix('admin')->resource('categories', 'App\Http\Controllers\Admin\CategorryController')->middleware('is_admin');
-Route::get('admin/categories', 'App\Http\Controllers\Admin\CategorryController@index')->name('categories.index');
+Route::get('admin/categories', 'App\Http\Controllers\Admin\CategorryController@index')->middleware('is_admin')->name('categories.index');
+
+//Товары в админке
+Route::prefix('admin')->resource('products', 'App\Http\Controllers\Admin\ProductController')->middleware('is_admin');
+Route::get('admin/products', 'App\Http\Controllers\Admin\ProductController@index')->middleware('is_admin')->name('products.index');
+Route::get('admin/products/show', 'App\Http\Controllers\Admin\ProductController@show')->middleware('is_admin')->name('products.show');
+Route::get('admin/products/edit', 'App\Http\Controllers\Admin\ProductController@edit')->middleware('is_admin')->name('products.edit');
+Route::get('admin/products/create', 'App\Http\Controllers\Admin\ProductController@create')->middleware('is_admin')->name('products.create');
+Route::post('admin/products/store', 'App\Http\Controllers\Admin\ProductController@store')->middleware('is_admin')->name('products.store');
+Route::put('admin/products/update', 'App\Http\Controllers\Admin\ProductController@update')->middleware('is_admin')->name('products.update');
 
 
 

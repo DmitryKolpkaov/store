@@ -11,6 +11,16 @@ class Product extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'name',
+        'code',
+        'price',
+        'category_id',
+        'description',
+        'image'
+
+    ];
+
     #Получаем категорию по category_id
     public function getCategory()
     {
