@@ -9,31 +9,41 @@
             <tbody>
             <tr>
                 <th>
-                    #
+                    №
                 </th>
-                <th>
-                    Имя
-                </th>
-                <th>
-                    Телефон
-                </th>
-                <th>
-                    Когда отправлен
-                </th>
+                @if(Auth::user()->isAdmin())
+                    <th>
+                        Имя
+                    </th>
+
+                    <th>
+                        Телефон
+                    </th>
+
+                    <th>
+                        Когда отправлен
+                    </th>
+                @endif
+
                 <th>
                     Сумма
                 </th>
+
                 <th>
-                    Действия
                 </th>
             </tr>
             @foreach($orders as $order)
                 <tr>
                     <td>{{ $order->id}}</td>
-                    <td>{{ $order->name }}</td>
-                    <td>{{ $order->phone }}</td>
-                    <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
+                    @if(Auth::user()->isAdmin())
+                        <td>{{ $order->name }}</td>
+
+                        <td>{{ $order->phone }}</td>
+
+                        <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
+                    @endif
                     <td>{{ $order->getFullPrice() }} руб.</td>
+
                     <td>
                         <div class="btn-group" role="group">
                             <a class="btn btn-success" type="button"
@@ -42,7 +52,7 @@
                                @else
                                    href="{{ route('orders.person.show', $order) }}"
                                @endif
-                            >Открыть</a>
+                            >Заказ</a>
 
                         </div>
                     </td>

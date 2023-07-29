@@ -19,7 +19,7 @@
         </div>
 
         <div id="navbar" class="collapse navbar-collapse ">
-            <div class="dropdown mgt-05 flex-end">
+            <div class="dropdown mgt-08 flex-end">
                 <button class="btn dropdown-toggle btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Меню
                 </button>

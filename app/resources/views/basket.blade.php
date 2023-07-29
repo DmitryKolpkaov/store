@@ -28,13 +28,13 @@
                         <div class="btn-group form-inline">
                             <form action="{{ route('basket-remove', $product) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-danger"
+                                <button type="submit" class="btn btn-danger minus"
                                         href=""><span
                                         class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
                             </form>
                             <form action="{{ route('basket-add', $product) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-success"
+                                <button id="plus" type="submit" class="btn btn-success"
                                         href=""><span
                                         class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                             </form>

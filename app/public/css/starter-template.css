@@ -23,8 +23,8 @@ div .form-inline form{
     display: inline;
 }
 
-.mgt-05{
-    margin-top: 0.5% !important;
+.mgt-08{
+    margin-top: 0.8% !important;
 }
 
 .mgt-1{
@@ -41,6 +41,43 @@ div .form-inline form{
     left: unset !important;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 770px) {
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+        display: block !important;
+    }
+    .nav .navbar-nav .navbar-right{
+        display: block !important;
+    }
+    #navbar{
+        display: contents !important;
+        justify-content: end !important;
+    }
+    .navbar-nav{
+        margin: 0 !important;
+    }
+    .pt{
+        padding-top: 2px !important;
+    }
+    .pt-5px{
+        padding-top: 5px;
+    }
 
+}
+
+.btn-group .btn {
+    width: 152px !important;
+}
+
+
+
+.nav .navbar-nav .btn{
+    width: 100px !important;
+}
+
+.pt{
+    padding-top: 9px !important;
+}
+
+.navbar-nav .dropdown-menu{
+    position: absolute !important;
 }
