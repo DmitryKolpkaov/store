@@ -34,11 +34,11 @@ Route::get('admin/categories', 'App\Http\Controllers\Admin\CategorryController@i
 //Товары в админке
 Route::prefix('admin')->resource('products', 'App\Http\Controllers\Admin\ProductController')->middleware('is_admin');
 Route::get('admin/products', 'App\Http\Controllers\Admin\ProductController@index')->middleware('is_admin')->name('products.index');
-Route::get('admin/products/{id}/show', 'App\Http\Controllers\Admin\ProductController@show')->middleware('is_admin')->name('products.show');
-Route::get('admin/products/edit/{id}', 'App\Http\Controllers\Admin\ProductController@edit')->middleware('is_admin')->name('products.edit');
+Route::get('admin/products/show/{product}/', 'App\Http\Controllers\Admin\ProductController@show')->middleware('is_admin')->name('products.show');
+Route::get('admin/products/edit/{product}', 'App\Http\Controllers\Admin\ProductController@edit')->middleware('is_admin')->name('products.edit');
 Route::get('admin/products/create', 'App\Http\Controllers\Admin\ProductController@create')->middleware('is_admin')->name('products.create');
 Route::post('admin/products/store', 'App\Http\Controllers\Admin\ProductController@store')->middleware('is_admin')->name('products.store');
-Route::put('admin/products/update/', 'App\Http\Controllers\Admin\ProductController@update')->middleware('is_admin')->name('products.update');
+Route::put('admin/products/update/{product}', 'App\Http\Controllers\Admin\ProductController@update')->middleware('is_admin')->name('products.update');
 
 
 

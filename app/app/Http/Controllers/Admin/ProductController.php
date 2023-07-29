@@ -40,9 +40,9 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product, Category $category)
+    public function show(Product $product)
     {
-
+        $category = $product->getCategory();
         return view('auth.products.show', compact('product', 'category'));
     }
 
