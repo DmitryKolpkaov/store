@@ -75,7 +75,7 @@ Route::prefix('basket')->group(function(){
 
 Route::get('/categories', 'App\Http\Controllers\MainController@categories')->name('categories');
 Route::get('/{category}', 'App\Http\Controllers\MainController@category')->name('category');
-Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@product')->name('product');
+Route::get('/product/show/{product}}', 'App\Http\Controllers\MainController@show')->name('product');
 
 
 Auth::routes();

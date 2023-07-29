@@ -22,3 +22,25 @@ div.thumbnail img {
 div .form-inline form{
     display: inline;
 }
+
+.mgt-05{
+    margin-top: 0.5% !important;
+}
+
+.mgt-1{
+    margin-top: 1% !important;
+}
+
+.flex-end{
+    display: flex !important;
+    justify-content: end !important;
+}
+
+
+.dropdown-menu{
+    left: unset !important;
+}
+
+@media all and (max-width: 800px) {
+
+}

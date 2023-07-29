@@ -31,9 +31,17 @@ class MainController extends Controller
     }
 
     #Возвращает имя продукта
-    public function product($category, $product = null)
+    public function product(Product $product)
     {
-        return view('product', ['product'=>$product]);
+        $product->get('id');
+        return view('product', compact('product'));
     }
+
+    public function show(Product $product)
+    {
+        $category = $product->getCategory();
+        return view('product', compact('product', 'category'));
+    }
+
 
 }

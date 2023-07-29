@@ -13,7 +13,7 @@
                        role="button">В корзину</button>
                     {{--Название категории к которой относится продукт--}}
                     {{$product->category->name}}
-                    <a href="{{route('product', [$product->category->code, $product->code])}}"
+                    <a href="{{route('product', $product->id)}}"
                        class="btn btn-default"
                        role="button">Подробнее</a>
                 </form>
