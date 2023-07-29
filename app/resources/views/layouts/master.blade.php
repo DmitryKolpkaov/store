@@ -19,19 +19,22 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{route('index')}}">Все товары</a></li>
-                <li><a href="{{route('categories')}}">Категории</a>
-                </li>
-                <li><a href="{{route('basket')}}">В корзину</a></li>
+                <li @if(Route::currentRouteNamed('index')) class="active" @endif><a href="{{route('index')}}">Все товары</a></li>
+                <li @if(Route::currentRouteNamed('categor*')) class="active" @endif><a href="{{route('categories')}}">Категории</a></li>
+                <li @if(Route::currentRouteNamed('basket')) class="active" @endif><a href="{{route('basket')}}">В корзину</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 @guest
-                    <li><a href="{{ route('login') }}">Панель администратора</a></li>
+                    <li><a href="{{ route('login') }}">Войти</a></li>
                 @endguest
 
                 @auth
-                    <li><a href="{{ route('orders') }}">Панель администратора</a></li>
+                    @if(Auth::user()->isAdmin())
+                            <li><a href="{{ route('orders') }}">Панель администратора</a></li>
+                        @else
+                            <li><a href="{{ route('orders.person') }}">Мои заказы</a></li>
+                    @endif
                     <li><a href="{{ route('get-logout') }}">Выйти</a></li>
                 @endauth
             </ul>

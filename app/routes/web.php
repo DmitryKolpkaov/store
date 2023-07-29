@@ -25,7 +25,20 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 
 
 //Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->middleware('auth')->name('orders');
+
+//Заказы в админке для админа
 Route::prefix('admin')->get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->middleware('is_admin')->name('orders');
+Route::prefix('admin')->get('/orders/{order}', 'App\Http\Controllers\Admin\OrderController@show')->middleware('is_admin')->name('orders.show');
+
+//Заказы в админке для заказчика и админа
+Route::middleware('auth')->group(function(){
+    Route::get('/orders', 'App\Http\Controllers\Person\OrderController@index')->name('orders.person');
+    Route::get('/orders/{order}', 'App\Http\Controllers\Person\OrderController@show')->name('orders.person.show');
+    Route::middleware('is_admin')->group(function(){
+        Route::prefix('admin')->get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('orders');
+        Route::prefix('admin')->get('/orders/{order}', 'App\Http\Controllers\Admin\OrderController@show')->name('orders.show');
+    });
+});
 
 //Категории в админке
 Route::prefix('admin')->resource('categories', 'App\Http\Controllers\Admin\CategorryController')->middleware('is_admin');
