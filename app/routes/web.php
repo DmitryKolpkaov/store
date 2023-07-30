@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function(){
     Route::middleware('is_admin')->group(function(){
         Route::prefix('admin')->get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('orders');
         Route::prefix('admin')->get('/orders/{order}', 'App\Http\Controllers\Admin\OrderController@show')->name('orders.show');
+        Route::prefix('admin')->get('orders/destroy/{order}', 'App\Http\Controllers\Admin\OrderController@destroy')->name('orders.delete');
     });
 });
 

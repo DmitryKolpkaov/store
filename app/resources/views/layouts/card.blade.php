@@ -1,7 +1,7 @@
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-        <img src="/images/layout.jpg"
-             alt="iPhone X 64GB">
+        <img src="{{ Storage::url($product->image) }}"
+             alt="photo">
         <div class="caption">
             {{--Название и цена у продуктов--}}
             <h3>{{$product->name}}</h3>

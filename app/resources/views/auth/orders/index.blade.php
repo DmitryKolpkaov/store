@@ -54,6 +54,13 @@
                                @endif
                             >Заказ</a>
 
+                            @if(Auth::user()->isAdmin())
+                                <a class="btn btn-danger" type="button"
+
+                                       href="{{ route('orders.delete', $order) }}"
+                                >Удалить</a>
+                            @endif
+
                         </div>
                     </td>
                 </tr>

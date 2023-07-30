@@ -17,4 +17,10 @@ class OrderController extends Controller
     {
         return view('auth.orders.show', compact('order'));
     }
+
+    public function destroy(Order $order)
+    {
+        $order->delete();
+        return redirect()->route('orders', compact('order'));
+    }
 }

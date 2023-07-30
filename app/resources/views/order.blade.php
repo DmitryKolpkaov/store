@@ -10,7 +10,7 @@
             <form action="{{route('basket-confirm')}}" method="POST" novalidate>
                 @csrf
                 <div>
-                    <p>Укажите свои имя и номер телефона, чтобы наш менеджер мог с вами связаться:</p>
+                    <h4>Укажите свои имя и номер телефона, чтобы наш менеджер мог с вами связаться через Telegram или WhatsApp:</h4>
 
                     <div class="container">
                         <div class="form-group">
