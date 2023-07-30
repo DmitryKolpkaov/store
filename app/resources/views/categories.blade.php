@@ -13,5 +13,7 @@
                 {{$category->description}}
             </p>
         </div>
+
+        {{$categories->links()}}
     @endforeach
 @endsection

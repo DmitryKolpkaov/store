@@ -10,4 +10,5 @@
             @include('layouts.card', compact('product'))
         @endforeach
     </div>
+    {{$products->links()}}
 @endsection

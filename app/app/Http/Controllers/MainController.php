@@ -11,14 +11,14 @@ class MainController extends Controller
     #Возвращает главную страницу
     public function index()
     {
-        $products = Product::get();
+        $products = Product::paginate(6);
         return view('index', compact('products'));
     }
 
     #Возвращает страницу категорий
     public function categories()
     {
-        $categories = Category::get();
+        $categories = Category::paginate(1);
         return view('categories', compact('categories'));
     }
 
