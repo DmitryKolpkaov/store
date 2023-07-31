@@ -6,7 +6,9 @@
     <h1>{{$product->name}}</h1>
     <p>Цена: <b>От {{$product->price}} руб.</b></p>
     <img class="img-width" src="{{ Storage::url($product->image) }}">
-    <p>{{$product->description}}</p>
+    <br>
+    <br>
+    <h4>{{$product->description}}</h4>
     <h5>Категория: <b>{{$product->category->name}} </b> </h5>
 @endsection
 
