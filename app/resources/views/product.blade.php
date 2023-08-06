@@ -10,5 +10,13 @@
     <br>
     <h4>{{$product->description}}</h4>
     <h5>Категория: <b>{{$product->category->name}} </b> </h5>
+
+    <p>
+    <form action="{{route('basket-add', $product)}}" method="post">
+        @csrf
+        <button type="submit" class="btn btn-primary"
+                role="button">В корзину</button>
+    </form>
+    </p>
 @endsection
 
