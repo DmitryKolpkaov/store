@@ -64,6 +64,9 @@ div .form-inline form{
     .pt-5px{
         padding-top: 5px;
     }
+    body{
+        margin-top: 15%;
+    }
 
 }
 
