@@ -23,7 +23,7 @@
     <link href="/css/admin.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/starter-template.css">
 </head>
-<body>
+<body class="no-margin">
 <div id="app">
     <nav class="navbar navbar-default navbar-expand-md navbar-light navbar-laravel">
         <div class="container">

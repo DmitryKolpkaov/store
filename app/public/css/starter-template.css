@@ -1,4 +1,8 @@
 body {
+    margin-top: 5%;
+}
+.no-margin{
+    margin-top: 0;
 }
 
 .starter-template {
